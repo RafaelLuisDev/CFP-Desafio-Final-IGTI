@@ -104,7 +104,7 @@ export default function App() {
     return (
         <div className="container">
             <Header></Header>
-            <Informations entriesByPeriod={entriesByPeriod} onChangePeriod={onChangePeriod}></Informations>
+            <Informations filteredEntriesByPeriod={filteredEntriesByPeriod} onChangePeriod={onChangePeriod}></Informations>
             <Filter onChangeFilter={onChangeFilter}></Filter>
             <EntriesList deleteEntry={deleteEntry} entries={filteredEntriesByPeriod} changeModeModal={changeModeModal}></EntriesList>
             <EntryModal modeModal={modeModal} changeModeModal={changeModeModal} actionModal={actionModal} />

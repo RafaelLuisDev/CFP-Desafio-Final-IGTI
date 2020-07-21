@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import transactionsService from '../Services/transactionsService';
 import formatHelpers from '../Helpers/formatHelpers';
 
-export default function Informations({ entriesByPeriod, onChangePeriod }) {
+export default function Informations({ filteredEntriesByPeriod, onChangePeriod }) {
     const [allPeriods, setAllPeriods] = useState([]);
     const [selectedPeriod, setSelectedPeriod] = useState('');
-    const entries = entriesByPeriod.length;
-    const income = entriesByPeriod
+    const entries = filteredEntriesByPeriod.length;
+    const income = filteredEntriesByPeriod
         .filter((entry) => {
             return entry.type === '+';
         })
         .reduce((acc, curr) => {
             return acc + curr.value;
         }, 0);
-    const expenses = entriesByPeriod
+    const expenses = filteredEntriesByPeriod
         .filter((entry) => {
             return entry.type === '-';
         })

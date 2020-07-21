@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpTransaction = axios.create({
-    baseURL: 'http://localhost:3001/api/transaction',
+    baseURL: 'https://cfp-thecoder-d.herokuapp.com/api/transaction',
     headers: {
         'Content-type': 'application/json',
     },
